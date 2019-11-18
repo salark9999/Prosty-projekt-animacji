@@ -1,0 +1,177 @@
+body {
+    padding 0;
+    margin: 0;
+  }
+  
+#world {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#sky {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  background: #6ec8d8;
+  animation: sky-sunset 15s infinite;
+}
+
+#sun {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: yellow;
+  animation: sun-sunset 15s infinite;
+}
+
+#ground {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background: gray;
+}
+
+.car {
+  position: relative;
+  bottom: 50px;
+  left: 5%;
+  width: 110px;
+  height: 60px;
+  border-radius: 5px;
+  background: rgb(255, 136, 0);
+  animation: car-movement 15s infinite;
+}
+
+.car-spoiler {
+  position: absolute;
+  bottom: 55px;
+  left: -3px;
+  width: 10px;
+  height: 15px;
+  border-radius: 2px;
+  background: rgb(255, 136, 0);
+}
+
+.car-spoiler__second-part {
+  bottom: 65px;
+  left: -18px;
+  width: 40px;
+  border-radius: 0px;
+}
+
+.car-screen {
+  position: absolute;
+  bottom: 31px;
+  width: 15px;
+  height: 20px;
+  border: 2px solid black;
+  background: skyblue;
+}
+
+.car-screen__back {
+  left: 0px;
+  
+  border-radius: 10%;
+}
+
+.car-screen__center-back {
+  left: 25px;
+}
+
+.car-screen__center-middle {
+  left: 45px;
+}
+
+.car-screen__center-front {
+  right: 26px;
+}
+
+.car-screen__front {
+  right: 0px;
+  border-radius: 20%;
+}
+
+.car-wheel {
+  position: absolute;
+  bottom: -10px;
+  width: 25px;
+  height: 25px;
+  border: 2px dashed white;
+  border-radius: 50%;
+  background: black;
+  animation: wheel-movement 15s infinite;
+}
+
+.car-wheel__back {
+  left: 13px;
+}
+
+
+.car-wheel__front {
+  right: 13px;
+}
+
+.car-lights {
+  position: absolute;
+  bottom: 8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.car-lights__back {
+  left: -5px;
+  background: rgb(153, 2, 2);
+  animation: lights-flashing-back 1s infinite;
+}
+
+.car-lights__front {
+  right: -5px;
+  background: white;
+  animation: lights-flashing-front 1s infinite;
+}
+
+@keyframes sky-sunset {
+  0% { background: #40838f; }
+  25% { background: #6ec8d8; }
+  50% { background: #2a4670; }
+  100% { background: #40838f; }
+}
+
+@keyframes sun-sunset {
+  0% { top: 100%; left: -10%; }
+  25% { top: 5%; left: 44%; }
+  50% { top: 110%; left: 110%; }
+  100% { top: 100%; left: -10%; }
+}
+
+@keyframes car-movement {
+  0% { left: -10%; }
+  100% { left: 110%; }
+}
+
+@keyframes wheel-movement {
+  from { transform: rotate(0) }
+  to { transform: rotate(360deg) }
+}
+
+@keyframes lights-flashing-back {
+  0% { background: rgb(153, 2, 2); }
+  25% { background: rgb(255, 16, 16); }
+  50% { background: rgb(153, 2, 2); }
+  75% { background: rgb(255, 16, 16); }
+  100% { background: rgb(153, 2, 2); }
+}
+
+@keyframes lights-flashing-front {
+  0% { background: white; }
+  25% { background: rgb(255, 255, 0); }
+  50% { background: white; }
+  75% { background: rgb(255, 255, 0); }
+  100% { background: white; }
+}
